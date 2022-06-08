@@ -8,6 +8,10 @@ import matplotlib.pyplot as plt
 def func( y, t ):
 	return (t + y + t*y)
 
+# Solución exacta
+def Y(t):
+	return 2*np.exp(t)-t-1
+
 # Función para la fórmula de Euler
 def euler( x0, y, h, x ):
 	temp = -0
@@ -34,3 +38,9 @@ x = 0.1
 
 euler(x0, y0, h, x)
 
+# Graficando
+plt.grid(True)
+plt.plot(x0,y0, '*')
+plt.plot(x0,Y(x0), 'r')
+
+plt.show()
