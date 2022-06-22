@@ -44,5 +44,5 @@ for i in np.arange(0,n-1):
 plt.grid(True)
 plt.plot(x,y,'*b')
 plt.plot(x,Y(x),'r') #Solución exacta
-plt.title("Euler's Method")
+plt.title("Euler Mejorado")
 plt.show()
