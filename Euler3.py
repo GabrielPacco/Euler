@@ -3,6 +3,7 @@
 # utilizando el método de Euler.
 from turtle import end_fill
 import numpy as np
+import Euler2 as euler
 import math
 import matplotlib.pyplot as plt
 
@@ -16,7 +17,7 @@ def Y(t):
 a=0
 b=2
 c=1
-n=100
+n=30
 
 h= (b-a)/(n-1)
 t=np.zeros((n))
@@ -30,9 +31,16 @@ for i in np.arange(1,n):
 	y[i]=y[i-1]+func(y[i-1],t[i-1])*h
 	
 
+# Graficando Euler2
 # Graficando
 plt.grid(True)
-plt.plot(t,y, '*')
+plt.plot(t,y, '*k')
+plt.plot(t,Y(t), 'r')
+
+
+# Graficando
+plt.grid(True)
+plt.plot(t,y, '*b')
 plt.plot(t,Y(t), 'r')
 #tt = np.linspace(a,0.1,b)
 #yy = Y(tt)

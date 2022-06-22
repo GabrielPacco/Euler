@@ -22,7 +22,7 @@ print("x_n\t   py_n\t           y_n")
 for i in range(n):
 	print (x[i],"\t",format(py[i],'6f'),"\t",format(y[i],'6f'))
 
-plt.plot(x,y,'o')
+plt.plot(x,y,'*')
 plt.xlabel("Value of x")
 plt.ylabel("Value of y")
 plt.title("Approximation Solution with Modified Euler's Method")
