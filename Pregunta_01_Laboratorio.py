@@ -1,19 +1,18 @@
 import numpy as np
-import math
 import matplotlib.pyplot as plt
 
 # Valores iniciales
 a=0
-b=2
-y0=1
-N=10
+b=10
+y0=2.475
+N=20
 
 def f(x,y):
-    return x+y
+    return (4*np.exp(-x*x+2*x-1)) * (-2*x+2)
 
 # Solución exacta
 def y1(x):
-    ec=-1-x+(2*np.exp(x))
+    ec=4*np.exp(-(x-1)*(x-1))+1
     return ec
 
 # Función para Euler Tradicional
@@ -61,7 +60,7 @@ for i in range(1,N):
 
 # Grafica de Euler Tradicional
 plt.grid(True)
-plt.plot(xv,Euler(xv,f,y0),'*c')
+plt.plot(xv,Euler(xv,f,y0),'*b')
 
 #Grafica de Euler Mejorado
 plt.grid(True)
@@ -73,5 +72,9 @@ plt.plot(xv,RK4(xv,f,y0),'*k')
 
 #Grafica de solución exacta
 plt.plot(xv,y1(xv),'r') #Solución exacta
-plt.title("Euler RK4")
+
+plt.title(r'Problema_01')
+
+plt.legend(['Euler Tradicional','Euler Mejorado','RK4','Solucion exacta'])
+
 plt.show()

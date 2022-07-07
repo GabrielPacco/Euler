@@ -4,16 +4,17 @@ import matplotlib.pyplot as plt
 
 # Valores iniciales
 a=0
-b=2
+b=10
 y0=1
-N=10
+N=20
+
 
 def f(x,y):
     return x+y
 
 # Solución exacta
-def y1(x):
-    ec=-1-x+(2*np.exp(x))
+def y1(x,y):
+    ec=-1.2*y+(7*np.exp(-0.3*x))
     return ec
 
 # Función para Euler Tradicional
@@ -72,6 +73,7 @@ plt.grid(True)
 plt.plot(xv,RK4(xv,f,y0),'*k')
 
 #Grafica de solución exacta
-plt.plot(xv,y1(xv),'r') #Solución exacta
+plt.grid(True)
+plt.plot(xv,y1(xv,y0),'r')
 plt.title("Euler RK4")
 plt.show()
