@@ -61,7 +61,6 @@ def RK4(x, f, g, y0, z0):
     return x,y,z
 
 
-
 # Gráfica de la solución
 plt.grid(True)
 [xv,yv]=EulerSist(tv,f,g,x0,y0)
