@@ -17,7 +17,7 @@ a=0
 b=40
 x0=15
 y0=4
-N=400
+N=300
 
 # Construyecdo Nodos
 h=(b-a)/(N-1)
@@ -63,10 +63,14 @@ def RK4(x, f, g, y0, z0):
 
 # Gráfica de la solución
 plt.grid(True)
+
 [xv,yv]=EulerSist(tv,f,g,x0,y0)
 plt.plot(tv,xv,'*b')
 plt.plot(tv,yv,'*r')
 
+[xq,yq,zq]=RK4(tv,f,g,x0,y0)
+plt.plot(tv,yq,'*k')
+plt.plot(tv,zq,'*g')
 plt.show()
 
 
